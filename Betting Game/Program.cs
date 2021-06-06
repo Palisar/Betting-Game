@@ -18,6 +18,19 @@ namespace Betting_Game
             
             Random random = new Random();
 
+            static string PlayerName(int i)
+            {
+                string name = Console.ReadLine();
+                if (string.IsNullOrEmpty(name))
+                {
+                    return $"Player {i}";
+                }
+                else
+                {
+                    return name;
+                }
+            }
+
             int RollTheDice(int bet, double odds)
             {
                 if (random.NextDouble() > odds)
@@ -69,7 +82,7 @@ namespace Betting_Game
             for (int i = 0; i < playerCount; i++ )
             {
                 Console.Write("Player " + (i + 1) + " please enter your name: ");
-                playerList.Add(new Player() {Name = Console.ReadLine(), Cash = 100  });
+                playerList.Add(new Player() {Name = PlayerName(i+1), Cash = 100  });
 
                 Console.WriteLine("Hello " + playerList[i].Name + " You have got $" + playerList[i].Cash);
             }
