@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Betting_Game
 {
-    class Guy
+    class Player
     {
-        public string Name;
+        public string Name ="";
         public int Cash;
 
         /// <summary>
